@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<script src="./js/angular.min.js"></script>
+	<link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="./css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body data-ng-app="DoctorCard">
+<header class="container-fluid">
+
+</header>
+<div class="main">
+<section class="container" data-ng-controller="ShowDoctorCard as sdc">
+	<dl class="row" >
+		<dd class="col-md-6 col-lg-4 col-xs-12" data-ng-repeat="data in sdc.doctor">
+
+			<div class="doctor-info">
+				<div class="info-content">
+				<div class="avatar">
+					<img class="img-circle" src="image/no-avatar.jpg"/>
+				</div>
+				<div class="info">
+					<p><span data-ng-repeat="position in data.position">{{position}} </span><a href="#" class="btn-link"><strong>{{data.name.toUpperCase()}}</strong></a></p>
+					<p data-ng-repeat="major in data.major"><strong>{{major}}</strong></p>
+					<p><span class="money vnd">{{data.fee.moneyToString()}}</span>/Lần Tư Vấn</p>
+					<p style="line-height:30px"><span class="isActive"></span>Trực tuyến</p>
+				</div>
+			</div>
+				<div class="info-footer">
+					<button class="btn btn-link col-md-4 col-lg-4 col-xs-4"><span class="glyphicon glyphicon-earphone"></span> Nhắn gọi</button>
+					<button class="btn btn-link col-md-4 col-lg-4 col-xs-4"><span class="glyphicon glyphicon-phone"></span> Gọi ngay</button>
+					<button class="btn btn-link col-md-4 col-lg-4 col-xs-4"><span class="glyphicon glyphicon-calendar"></span> Đặt hẹn</button>
+				</div>
+			</div>	
+		</dd>
+	</dl>
+</section>
+</div>
+<script src="./js/doctorcard.js" ></script>
+</body>
+</html>
